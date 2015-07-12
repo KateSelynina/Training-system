@@ -1,0 +1,74 @@
+# Training-system
+<Fluent:RibbonWindow x:Class="Обучающая_система.MainWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     
+        Title="Обучающая система" Height="650" Width="800" WindowStartupLocation="Manual" Icon="Images\dep_1686764-Book-icon.png">
+
+    <StackPanel>
+
+        <Fluent:Ribbon>
+            <!--За кулисами-->
+            <Fluent:Ribbon.Menu>
+                <Fluent:Backstage>
+                    <Fluent:BackstageTabControl>
+
+                        <Fluent:BackstageTabItem Header="Закрыть" MouseDoubleClick="BackstageTabItem_MouseDoubleClick"/>
+                    </Fluent:BackstageTabControl>
+                </Fluent:Backstage>
+            </Fluent:Ribbon.Menu>
+
+
+            <Fluent:RibbonTabItem Header="Учебник">
+                <Fluent:RibbonGroupBox Header="Учебник">
+                    <Fluent:Button  Header="Введение" MouseDoubleClick="RibbonTabItem_MouseDoubleClick1"
+                                    Icon="Images\word.png" 
+                                    LargeIcon="Images\word.png"/>
+                    <Fluent:Button  Header="Интерфейсы" MouseDoubleClick="RibbonTabItem_MouseDoubleClick2"  Icon="Images\word.png" 
+                                    LargeIcon="Images\word.png"/>
+                    <Fluent:Button  Header="Коллекции общего назначения" MouseDoubleClick="RibbonTabItem_MouseDoubleClick3"    Icon="Images\word.png" 
+                                    LargeIcon="Images\word.png"/>
+                    <Fluent:Button  Header="Специалезированные коллекции" MouseDoubleClick="RibbonTabItem_MouseDoubleClick4" Icon="Images\word.png" 
+                                    LargeIcon="Images\word.png"/>
+                    <Fluent:Button  Header="Обобщенные типы" MouseDoubleClick="RibbonTabItem_MouseDoubleClick5" Icon="Images\word.png" 
+                                    LargeIcon="Images\word.png"/>
+                    <Fluent:Button  Header="Тестирование" MouseDoubleClick="RibbonTabItem_MouseDoubleClick6"  Icon="Images\word.png" 
+                                    LargeIcon="Images\i.png"/>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
+
+
+
+            <!--Панель быстрого доступа предметов-->
+            <Fluent:Ribbon.QuickAccessItems>
+                <!--Использование Контента или целевое свойство для задания  QAT пункта-->
+                <Fluent:QuickAccessMenuItem IsChecked="true">
+                    <Fluent:Button Header="Pink" Icon="Images\Pink.png" />
+                </Fluent:QuickAccessMenuItem>
+                <!--Связка с любым элементом управления-->
+                <Fluent:QuickAccessMenuItem Target="{Binding ElementName=buttonGreen}"/>
+            </Fluent:Ribbon.QuickAccessItems>
+
+            <!--Группа контектсных вкладок-->
+            <Fluent:Ribbon.ContextualGroups>
+                <Fluent:RibbonContextualTabGroup Header="Tools" Visibility="Visible"
+    	x:Name="toolsGroup" Background="Green" BorderBrush="Green" />
+            </Fluent:Ribbon.ContextualGroups>
+        </Fluent:Ribbon>
+        <Grid Background="#FFFDFDFD" Height="477">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <WebBrowser x:Name="web" Source ="file:///D:\Учеба\ПИ-11 (2 семестр)\курсовая работа по программированию\Введение.htm"/>
+
+        </Grid>
+
+    </StackPanel>
+</Fluent:RibbonWindow>
+    
